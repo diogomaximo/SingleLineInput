@@ -6,7 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ARLabel.h"
-@interface SingleLineTextField : UITextField<UITextFieldDelegate>
+@interface SingleLineTextField : UITextField<UITextFieldDelegate>{
+    
+}
+@property (nonatomic,strong) UIColor *lineSelectedColor;
+@property (nonatomic,strong) UIColor *lineNormalColor;
+@property (nonatomic,strong) UIColor *lineDisabledColor;
+@property (nonatomic,strong) UIColor *inputTextColor;
+@property (nonatomic,strong) UIColor *inputPlaceHolderColor;
 
 @end

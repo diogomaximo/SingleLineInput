@@ -6,42 +6,45 @@
 
 
 #import "SingleLineTextField.h"
-#import <pop/POP.h>
 #define kRect
+
 @implementation SingleLineTextField{
     CGRect frame;
     UIView *lineView;
-    UIColor *lineSelectedColor;
-    UIColor *lineNormalColor;
-    UIColor *lineDisabledColor;
-    UIColor *textColor;
+    //    UIColor *lineSelectedColor;
+    //    UIColor *lineNormalColor;
+    //    UIColor *lineDisabledColor;
+    //    UIColor *textColor;
     NSString *placeHolderString;
     UILabel *placeHolderLabel;
 }
+
+@synthesize lineNormalColor,lineDisabledColor,lineSelectedColor, inputTextColor, inputPlaceHolderColor;
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
     if (self) {
         frame = self.bounds;
-        lineSelectedColor = [UIColor colorWithRed:0.33 green:0.49 blue:0.36 alpha:1];
-        lineNormalColor   = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1];
-        lineDisabledColor = [UIColor grayColor];
-        textColor     = [UIColor blackColor];
+        self.lineSelectedColor = [UIColor colorWithRed:0.33 green:0.49 blue:0.36 alpha:1];
+        self.lineNormalColor   = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1];
+        self.lineDisabledColor = [UIColor grayColor];
+        self.textColor     = [UIColor blackColor];
         self.delegate = self;
-        self.textColor = textColor;
+        self.textColor = inputTextColor;
         [self addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         placeHolderString = self.placeholder;
-        self.placeholder = @"";
+        self.placeholder = NULL;
         self.font = [UIFont boldSystemFontOfSize:10];
         [self createLineInput];
         [self createPlaceHolderInput];
+        self.borderStyle = UITextBorderStyleNone;
     }
     return self;
 }
 
 -(void) createLineInput{
-    lineView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height - 1.0, frame.size.width, 1)];
+    lineView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height - 6, frame.size.width, 1)];
     lineView.backgroundColor = lineNormalColor;
     [self addSubview:lineView];
 }
@@ -69,15 +72,14 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-        [UIView animateWithDuration:0.1 animations:^(void){
-            lineView.backgroundColor = lineNormalColor;
-            if (textField.text.length == 0) {
-                placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y+10, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
-                placeHolderLabel.font = [UIFont boldSystemFontOfSize:10];
-            }
-        }];
+    [UIView animateWithDuration:0.1 animations:^(void){
+        lineView.backgroundColor = lineNormalColor;
+        if (textField.text.length == 0) {
+            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y+10, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
+            placeHolderLabel.font = [UIFont boldSystemFontOfSize:10];
+        }
+    }];
 }
-
 
 -(void) setEnabled:(BOOL)enabled{
     super.enabled = enabled;
@@ -100,12 +102,26 @@
     }
 }
 
-- (CGRect)editingRectForBounds:(CGRect)bounds {
-    return CGRectInset( bounds , 1 , 1);
+#pragma mark - Override default properties
+-(void)setLineDisabledColor:(UIColor *)aLineDisabledColor{
+    lineDisabledColor = aLineDisabledColor;
 }
 
-- (CGRect)textRectForBounds:(CGRect)bounds{
-    return CGRectInset( bounds , 1 , 1 );
+-(void) setLineNormalColor:(UIColor *)aLineNormalColor{
+    lineNormalColor = aLineNormalColor;
 }
 
+-(void) setLineSelectedColor:(UIColor *)aLineSelectedColor{
+    lineSelectedColor = aLineSelectedColor;
+}
+
+-(void) setInputTextColor:(UIColor *)anInputTextColor{
+    inputTextColor = anInputTextColor;
+    self.textColor = inputTextColor;
+}
+
+-(void) setInputPlaceHolderColor:(UIColor *)anInputPlaceHolderColor{
+    inputPlaceHolderColor = anInputPlaceHolderColor;
+    placeHolderLabel.textColor = inputPlaceHolderColor;
+}
 @end

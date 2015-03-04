@@ -23,7 +23,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		8DD2842C28F2CB6BCEF64A74 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8AB09485FEDDD869137FB7 /* libPods-Tests.a */; };
-		C881E2041AA793CA003A9243 /* SingleLineTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C881E2031AA793CA003A9243 /* SingleLineTextField.m */; };
+		C881E2071AA794AC003A9243 /* SingleLineTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C881E2061AA794AC003A9243 /* SingleLineTextField.m */; };
 		D2084115216DF41C83A7B0E7 /* libPods-SingleLineInput.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C941A0294AEEB700E055089B /* libPods-SingleLineInput.a */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +64,8 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6A8240CDC708CDEDD4AC0FD4 /* Pods-SingleLineInput.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleLineInput.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingleLineInput/Pods-SingleLineInput.debug.xcconfig"; sourceTree = "<group>"; };
 		AA83099B3483B4636B4C0C89 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C881E2021AA793CA003A9243 /* SingleLineTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLineTextField.h; sourceTree = "<group>"; };
-		C881E2031AA793CA003A9243 /* SingleLineTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLineTextField.m; sourceTree = "<group>"; };
+		C881E2051AA794AC003A9243 /* SingleLineTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLineTextField.h; sourceTree = "<group>"; };
+		C881E2061AA794AC003A9243 /* SingleLineTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLineTextField.m; sourceTree = "<group>"; };
 		C941A0294AEEB700E055089B /* libPods-SingleLineInput.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SingleLineInput.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1AAEF4500CFFC0557C2FA6E /* Pods-SingleLineInput.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleLineInput.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingleLineInput/Pods-SingleLineInput.release.xcconfig"; sourceTree = "<group>"; };
 		DD0AC7A9030BAF757979A71D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 		C881E1FE1AA6297B003A9243 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				C881E2021AA793CA003A9243 /* SingleLineTextField.h */,
-				C881E2031AA793CA003A9243 /* SingleLineTextField.m */,
+				C881E2051AA794AC003A9243 /* SingleLineTextField.h */,
+				C881E2061AA794AC003A9243 /* SingleLineTextField.m */,
 			);
 			name = Component;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 				6003F59E195388D20070C39A /* SLAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* SLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				C881E2041AA793CA003A9243 /* SingleLineTextField.m in Sources */,
+				C881E2071AA794AC003A9243 /* SingleLineTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
