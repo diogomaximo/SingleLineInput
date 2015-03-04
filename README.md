@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SingleLineInput.svg?style=flat)](http://cocoadocs.org/docsets/SingleLineInput)
 [![Platform](https://img.shields.io/cocoapods/p/SingleLineInput.svg?style=flat)](http://cocoadocs.org/docsets/SingleLineInput)
 
-## Screenshots
+## Demonstration
 ![alt tag](screen.gif)
 
 ## Usage
