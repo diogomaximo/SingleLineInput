@@ -6,8 +6,6 @@
 
 
 #import "SingleLineTextField.h"
-#define kRect
-
 @implementation SingleLineTextField{
     CGRect frame;
     UIView *lineView;
