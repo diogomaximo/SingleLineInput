@@ -14,4 +14,5 @@
 @property (nonatomic,strong) UIColor *lineDisabledColor;
 @property (nonatomic,strong) UIColor *inputTextColor;
 @property (nonatomic,strong) UIColor *inputPlaceHolderColor;
+
 @end
