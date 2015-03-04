@@ -5,6 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/SingleLineInput.svg?style=flat)](http://cocoadocs.org/docsets/SingleLineInput)
 [![Platform](https://img.shields.io/cocoapods/p/SingleLineInput.svg?style=flat)](http://cocoadocs.org/docsets/SingleLineInput)
 
+## Screenshots
+TODO:
+
 ## Usage
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
@@ -22,6 +25,7 @@ it, simply add the following line to your Podfile:
 ```
 
 3. Change your UITextField to SingleLineInput
+
 ![alt tag](custom_class.png)
 
 
