@@ -13,23 +13,23 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 
 ## Installation
-1. SingleLineInput is available through [CocoaPods](http://cocoapods.org). To install
+1- SingleLineInput is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 ```
     pod "SingleLineInput"
 ```
 
-2. Run 
+2- Run 
 ```
     pod update
 ```
 
-3. Change your UITextField to SingleLineInput
+3- Change your UITextField to SingleLineInput
 
 ![alt tag](custom_class.png)
 
 
-4. Change SingleLineInput Properties (Optional)
+4- Change SingleLineInput Properties (Optional)
 ```
 _myInput.lineDisabledColor = [UIColor cyanColor];
 _myInput.lineNormalColor = [UIColor grayColor];
@@ -47,14 +47,5 @@ Diogo Maximo, dcmaximo@gmail.com
 SingleLineInput is available under the MIT license. See the LICENSE file for more info.
 
 
- Pedro Maximo
-
- Lombard street
-
- 100
-
- San Francisco
- 
- 
 
 
