@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/SingleLineInput.svg?style=flat)](http://cocoadocs.org/docsets/SingleLineInput)
 
 ## Screenshots
-TODO:
+![alt tag](screen.gif)
 
 ## Usage
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -45,4 +45,16 @@ Diogo Maximo, dcmaximo@gmail.com
 ## License
 
 SingleLineInput is available under the MIT license. See the LICENSE file for more info.
+
+
+ Pedro Maximo
+
+ Lombard street
+
+ 100
+
+ San Francisco
+ 
+ 
+
 
