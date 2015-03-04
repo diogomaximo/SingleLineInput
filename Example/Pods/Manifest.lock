@@ -1,0 +1,17 @@
+PODS:
+  - FBSnapshotTestCase (1.5)
+  - SingleLineInput (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - SingleLineInput (from `../`)
+
+EXTERNAL SOURCES:
+  SingleLineInput:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: e2914fbaabccea1dcc773d6a16b1c24540642488
+  SingleLineInput: 39c8939a1cce3c9ea2c040ae8402a6a9413fd2e7
+
+COCOAPODS: 0.34.4
