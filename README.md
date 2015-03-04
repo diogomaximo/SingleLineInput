@@ -6,24 +6,28 @@
 [![Platform](https://img.shields.io/cocoapods/p/SingleLineInput.svg?style=flat)](http://cocoadocs.org/docsets/SingleLineInput)
 
 ## Usage
-
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
 
 ## Installation
-
 1. SingleLineInput is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
     pod "SingleLineInput"
 
-2. Change your UITextField to SingleLineInput as show this image
+2. Run 
+
+2. Change your UITextField to SingleLineInput
 ![alt tag](custom_class.png)
 
 3. Change SingleLineInput Properties (Optional)
-
-
+```
+_myInput.lineDisabledColor = [UIColor cyanColor];
+_myInput.lineNormalColor = [UIColor grayColor];
+_myInput.lineSelectedColor = [UIColor blueColor];
+_myInput.inputTextColor = [UIColor redColor];
+_myInput.inputPlaceHolderColor = [UIColor greenColor];
+```
 
 ## Author
 
