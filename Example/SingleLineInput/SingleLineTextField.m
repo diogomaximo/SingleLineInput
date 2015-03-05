@@ -9,10 +9,6 @@
 @implementation SingleLineTextField{
     CGRect frame;
     UIView *lineView;
-    //    UIColor *lineSelectedColor;
-    //    UIColor *lineNormalColor;
-    //    UIColor *lineDisabledColor;
-    //    UIColor *textColor;
     NSString *placeHolderString;
     UILabel *placeHolderLabel;
 }
