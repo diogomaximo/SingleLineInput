@@ -7,12 +7,19 @@
 //
 
 #import "SLAppDelegate.h"
+#import "MBFingerTipWindow.h"
 
 @implementation SLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    //UIViewController *vc = self.window.rootViewController;
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    self.window = [[MBFingerTipWindow alloc] initWithFrame:frame];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"myForm"];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible ];
     return YES;
 }
 							
