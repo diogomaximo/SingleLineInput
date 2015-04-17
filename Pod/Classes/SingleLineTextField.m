@@ -15,9 +15,10 @@
     UIColor *lineDisabledColor;
     UIColor *inputTextColor;
     UIColor *placeHolderColor;
-    
     double animationDuration;
-    
+    CGRect aFrame;
+    CGRect framePlaceHolder;
+    int offSetSizeTextField;
    
 }
 
@@ -26,6 +27,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         frame = self.bounds;
+        offSetSizeTextField = 10;
         self.lineSelectedColor = [UIColor colorWithRed:0.33 green:0.49 blue:0.36 alpha:1];
         self.lineNormalColor   = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1];
         self.lineDisabledColor = [UIColor grayColor];
@@ -35,25 +37,34 @@
         [self addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         placeHolderString = self.placeholder;
         self.placeholder = NULL;
-        self.font = [UIFont boldSystemFontOfSize:10];
+        self.font = [UIFont systemFontOfSize:13];
         [self createLineInput];
         [self createPlaceHolderInput];
         self.borderStyle = UITextBorderStyleNone;
+        //self.backgroundColor = [UIColor redColor];
         animationDuration = 0.1;
+        aFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height + offSetSizeTextField);
+        
     }
     return self;
 }
 
+- (void) layoutSubviews
+{
+    [super layoutSubviews];
+    self.frame = aFrame;
+}
+
 -(void) createLineInput{
-    lineView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height - 6, frame.size.width, 1)];
+    lineView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height + 2 , frame.size.width, 1)];
     lineView.backgroundColor = lineNormalColor;
     [self addSubview:lineView];
 }
 
 -(void) createPlaceHolderInput{
-    placeHolderLabel = [[UILabel alloc] initWithFrame:frame];
+    placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y+ 8, frame.size.width, frame.size.height)];
     placeHolderLabel.text = placeHolderString;
-    placeHolderLabel.font = [UIFont boldSystemFontOfSize:10];
+    placeHolderLabel.font = [UIFont systemFontOfSize:13];
     placeHolderLabel.textColor = [UIColor grayColor];
     placeHolderLabel.alpha = 0.5;
     self.tintColor = [UIColor grayColor];
@@ -65,19 +76,23 @@
     [UIView animateWithDuration:animationDuration animations:^(void){
         lineView.backgroundColor = lineSelectedColor;
         if (textField.text.length == 0) {
-            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y-10, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
-            placeHolderLabel.font = [UIFont boldSystemFontOfSize:8];
+            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y-16, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
+            placeHolderLabel.font = [UIFont systemFontOfSize:8];
+     
         }
         
     }];
+    CGRect nFrame = self.bounds;
+    self.frame = CGRectMake(nFrame.origin.x, nFrame.origin.y, nFrame.size.width, nFrame.size.height);
+;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [UIView animateWithDuration:animationDuration animations:^(void){
         lineView.backgroundColor = lineNormalColor;
         if (textField.text.length == 0) {
-            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y+10, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
-            placeHolderLabel.font = [UIFont boldSystemFontOfSize:10];
+            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y+16, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
+            placeHolderLabel.font = [UIFont systemFontOfSize:13];
         }
     }];
 }
@@ -98,6 +113,10 @@
     if (textField.text.length > 0) {
         textField.font = [UIFont systemFontOfSize:textField.font.pointSize];
     }
+}
+
+- (CGRect)placeholderRectForBounds:(CGRect)bounds {
+    return CGRectInset( bounds , 0 , 0);
 }
 
 #pragma mark - Override default properties
