@@ -7,19 +7,24 @@
 //
 
 #import "SLAppDelegate.h"
-#import "MBFingerTipWindow.h"
-
+#import "SingleLineTextField.h"
 @implementation SLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //UIViewController *vc = self.window.rootViewController;
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    self.window = [[MBFingerTipWindow alloc] initWithFrame:frame];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"myForm"];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible ];
+    [[SingleLineTextField appearance] setLineDisabledColor:[UIColor cyanColor]];
+    [[SingleLineTextField appearance] setLineNormalColor:[UIColor grayColor]];
+    [[SingleLineTextField appearance] setLineSelectedColor:[UIColor blueColor]];
+    [[SingleLineTextField appearance] setInputPlaceHolderColor:[UIColor greenColor]];
+    
+    [[SingleLineTextField appearance] setInputFont:[UIFont boldSystemFontOfSize:18]];
+    [[SingleLineTextField appearance] setPlaceHolderFont:[UIFont boldSystemFontOfSize:16]];
+    
+    
     return YES;
 }
 							

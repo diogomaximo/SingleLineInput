@@ -10,9 +10,16 @@
     UIView *lineView;
     NSString *placeHolderString;
     UILabel *placeHolderLabel;
+    UIColor *lineSelectedColor;
+    UIColor *lineNormalColor;
+    UIColor *lineDisabledColor;
+    UIColor *inputTextColor;
+    UIColor *placeHolderColor;
+    
+    double animationDuration;
+    
+   
 }
-
-@synthesize lineNormalColor,lineDisabledColor,lineSelectedColor, inputTextColor, inputPlaceHolderColor,animationDuration;
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -112,7 +119,17 @@
 }
 
 -(void) setInputPlaceHolderColor:(UIColor *)anInputPlaceHolderColor{
-    inputPlaceHolderColor = anInputPlaceHolderColor;
-    placeHolderLabel.textColor = inputPlaceHolderColor;
+    placeHolderColor = anInputPlaceHolderColor;
+    placeHolderLabel.textColor = placeHolderColor;
 }
+
+-(void) setInputFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR{
+    self.font = font;
+}
+
+-(void) setPlaceHolderFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR{
+    placeHolderLabel.font = font;
+}
+
+
 @end

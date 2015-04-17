@@ -9,10 +9,12 @@
 @interface SingleLineTextField : UITextField<UITextFieldDelegate>{
     
 }
-@property (nonatomic,strong) UIColor *lineSelectedColor;     //Customize line selected color
-@property (nonatomic,strong) UIColor *lineNormalColor;       //Customize line normal color
-@property (nonatomic,strong) UIColor *lineDisabledColor;     //Customize line disabled color
-@property (nonatomic,strong) UIColor *inputTextColor;        //Customize input text color
-@property (nonatomic,strong) UIColor *inputPlaceHolderColor; //Customize input color
-@property (nonatomic) double animationDuration; //Customize animation duration - default: 0.1
+-(void)setLineDisabledColor:(UIColor *)aLineDisabledColor NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
+-(void) setLineNormalColor:(UIColor *)aLineNormalColor NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
+-(void) setLineSelectedColor:(UIColor *)aLineSelectedColor NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
+-(void) setInputTextColor:(UIColor *)anInputTextColor NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
+-(void) setInputPlaceHolderColor:(UIColor *)anInputPlaceHolderColor NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
+-(void) setPlaceHolderFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
+-(void) setInputFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
+
 @end

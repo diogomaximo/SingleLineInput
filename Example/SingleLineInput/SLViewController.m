@@ -17,12 +17,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    _cityInput.lineDisabledColor = [UIColor cyanColor];
-    _cityInput.lineNormalColor = [UIColor grayColor];
-    _cityInput.lineSelectedColor = [UIColor blueColor];
-    _cityInput.inputTextColor = [UIColor redColor];
-    _cityInput.inputPlaceHolderColor = [UIColor greenColor];
+    [super viewDidLoad];    
 }
 
 - (void)didReceiveMemoryWarning
