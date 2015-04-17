@@ -25,6 +25,7 @@
     [[SingleLineTextField appearance] setPlaceHolderFont:[UIFont boldSystemFontOfSize:16]];
     
     
+    
     return YES;
 }
 							
