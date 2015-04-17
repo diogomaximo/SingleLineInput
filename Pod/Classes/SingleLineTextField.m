@@ -4,20 +4,22 @@
 //
 //  Created by Diogo Maximo on 17/10/14.
 
-
 #import "SingleLineTextField.h"
 @implementation SingleLineTextField{
     CGRect frame;
     UIView *lineView;
-    //    UIColor *lineSelectedColor;
-    //    UIColor *lineNormalColor;
-    //    UIColor *lineDisabledColor;
-    //    UIColor *textColor;
     NSString *placeHolderString;
     UILabel *placeHolderLabel;
+    UIColor *lineSelectedColor;
+    UIColor *lineNormalColor;
+    UIColor *lineDisabledColor;
+    UIColor *inputTextColor;
+    UIColor *placeHolderColor;
+    
+    double animationDuration;
+    
+   
 }
-
-@synthesize lineNormalColor,lineDisabledColor,lineSelectedColor, inputTextColor, inputPlaceHolderColor;
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -37,6 +39,7 @@
         [self createLineInput];
         [self createPlaceHolderInput];
         self.borderStyle = UITextBorderStyleNone;
+        animationDuration = 0.1;
     }
     return self;
 }
@@ -59,7 +62,7 @@
 
 #pragma mark UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    [UIView animateWithDuration:0.1 animations:^(void){
+    [UIView animateWithDuration:animationDuration animations:^(void){
         lineView.backgroundColor = lineSelectedColor;
         if (textField.text.length == 0) {
             placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y-10, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
@@ -70,7 +73,7 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    [UIView animateWithDuration:0.1 animations:^(void){
+    [UIView animateWithDuration:animationDuration animations:^(void){
         lineView.backgroundColor = lineNormalColor;
         if (textField.text.length == 0) {
             placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y+10, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
@@ -91,11 +94,8 @@
 - (void)textFieldDidChange:(id)sender
 {
     UITextField *textField = (UITextField *)sender;
-    
-    if (textField.text.length == 0) {
-        //textField.font = [FonteUtil fonteMuseo300ComTamanho:14];
-    }
-    else {
+    //Handle problem with font size when using secure text Entry
+    if (textField.text.length > 0) {
         textField.font = [UIFont systemFontOfSize:textField.font.pointSize];
     }
 }
@@ -119,7 +119,17 @@
 }
 
 -(void) setInputPlaceHolderColor:(UIColor *)anInputPlaceHolderColor{
-    inputPlaceHolderColor = anInputPlaceHolderColor;
-    placeHolderLabel.textColor = inputPlaceHolderColor;
+    placeHolderColor = anInputPlaceHolderColor;
+    placeHolderLabel.textColor = placeHolderColor;
 }
+
+-(void) setInputFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR{
+    self.font = font;
+}
+
+-(void) setPlaceHolderFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR{
+    placeHolderLabel.font = font;
+}
+
+
 @end
