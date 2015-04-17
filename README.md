@@ -36,6 +36,14 @@ _myInput.lineNormalColor = [UIColor grayColor];
 _myInput.lineSelectedColor = [UIColor blueColor];
 _myInput.inputTextColor = [UIColor redColor];
 _myInput.inputPlaceHolderColor = [UIColor greenColor];
+#OR use UIAppearance in your AppDelegate for change all inputs properties
+[[SingleLineTextField appearance] setLineDisabledColor:[UIColor cyanColor]];
+[[SingleLineTextField appearance] setLineNormalColor:[UIColor grayColor]];
+[[SingleLineTextField appearance] setLineSelectedColor:[UIColor blueColor]];
+[[SingleLineTextField appearance] setInputPlaceHolderColor:[UIColor greenColor]];
+[[SingleLineTextField appearance] setInputFont:[UIFont boldSystemFontOfSize:18]];
+[[SingleLineTextField appearance] setPlaceHolderFont:[UIFont boldSystemFontOfSize:16]];
+
 ```
 
 ## Author
