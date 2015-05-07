@@ -19,7 +19,10 @@
     CGRect aFrame;
     CGRect framePlaceHolder;
     int offSetSizeTextField;
-   
+    UIFont *inputFont;
+    UIFont *placeHolderFont;
+    UIFont *placeHolderFontFloat;
+    
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
@@ -64,9 +67,9 @@
 -(void) createPlaceHolderInput{
     placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y+ 8, frame.size.width, frame.size.height)];
     placeHolderLabel.text = placeHolderString;
-    placeHolderLabel.font = [UIFont systemFontOfSize:13];
+    placeHolderLabel.font = placeHolderFont;
     placeHolderLabel.textColor = [UIColor grayColor];
-    placeHolderLabel.alpha = 0.5;
+    placeHolderLabel.alpha = 1;
     self.tintColor = [UIColor grayColor];
     [self addSubview:placeHolderLabel];
 }
@@ -77,13 +80,11 @@
         lineView.backgroundColor = lineSelectedColor;
         if (textField.text.length == 0) {
             placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y-16, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
-            placeHolderLabel.font = [UIFont systemFontOfSize:8];
+            placeHolderLabel.font = placeHolderFontFloat;
      
         }
         
     }];
-    CGRect nFrame = self.bounds;
-    self.frame = CGRectMake(nFrame.origin.x, nFrame.origin.y, nFrame.size.width, nFrame.size.height);
 ;
 }
 
@@ -92,7 +93,7 @@
         lineView.backgroundColor = lineNormalColor;
         if (textField.text.length == 0) {
             placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y+16, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
-            placeHolderLabel.font = [UIFont systemFontOfSize:13];
+            placeHolderLabel.font = placeHolderFont;
         }
     }];
 }
@@ -111,12 +112,12 @@
     UITextField *textField = (UITextField *)sender;
     //Handle problem with font size when using secure text Entry
     if (textField.text.length > 0) {
-        textField.font = [UIFont systemFontOfSize:textField.font.pointSize];
+        textField.font = inputFont;
     }
 }
 
 - (CGRect)placeholderRectForBounds:(CGRect)bounds {
-    return CGRectInset( bounds , 0 , 0);
+    return CGRectInset( bounds, 0 ,0);
 }
 
 #pragma mark - Override default properties
@@ -143,11 +144,18 @@
 }
 
 -(void) setInputFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR{
-    self.font = font;
+    inputFont = font;
+    self.font = inputFont;
 }
 
 -(void) setPlaceHolderFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR{
-    placeHolderLabel.font = font;
+    placeHolderFont = font;
+    placeHolderFontFloat = [UIFont fontWithName:placeHolderFont.fontName size:7];
+    placeHolderLabel.font = placeHolderFont;
+    
+    if (self.text.length > 0 ){
+        placeHolderLabel.font = placeHolderFontFloat;
+    }
 }
 
 

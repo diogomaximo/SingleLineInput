@@ -16,5 +16,4 @@
 -(void) setInputPlaceHolderColor:(UIColor *)anInputPlaceHolderColor NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
 -(void) setPlaceHolderFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
 -(void) setInputFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
--(void) setPlaceHolderFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;
 @end
