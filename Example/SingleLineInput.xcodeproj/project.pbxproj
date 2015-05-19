@@ -516,6 +516,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SingleLineInput/SingleLineInput-Prefix.pch";
 				INFOPLIST_FILE = "SingleLineInput/SingleLineInput-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -530,6 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SingleLineInput/SingleLineInput-Prefix.pch";
 				INFOPLIST_FILE = "SingleLineInput/SingleLineInput-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

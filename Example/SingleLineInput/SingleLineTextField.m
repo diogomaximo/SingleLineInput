@@ -79,20 +79,20 @@
     [UIView animateWithDuration:animationDuration animations:^(void){
         lineView.backgroundColor = lineSelectedColor;
         if (textField.text.length == 0) {
-            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y-16, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
+            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y-20, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
             placeHolderLabel.font = placeHolderFontFloat;
-     
+            
         }
         
     }];
-;
+    ;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [UIView animateWithDuration:animationDuration animations:^(void){
         lineView.backgroundColor = lineNormalColor;
         if (textField.text.length == 0) {
-            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y+16, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
+            placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y+20, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
             placeHolderLabel.font = placeHolderFont;
         }
     }];
@@ -150,7 +150,7 @@
 
 -(void) setPlaceHolderFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR{
     placeHolderFont = font;
-    placeHolderFontFloat = [UIFont fontWithName:placeHolderFont.fontName size:7];
+    placeHolderFontFloat = [UIFont fontWithName:placeHolderFont.fontName size:14];
     placeHolderLabel.font = placeHolderFont;
     
     if (self.text.length > 0 ){
