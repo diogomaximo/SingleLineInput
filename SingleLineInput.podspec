@@ -8,7 +8,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = "SingleLineInput"
-  s.version          = "0.9.8"
+  s.version          = "0.1.0"
   s.summary          = "A single line textfield with the same style of telegram website."
   s.description      = <<-DESC
                        It's an implementation of Telegram text field used on https://web.telegram.org
