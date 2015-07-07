@@ -12,19 +12,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"myForm"];
-    self.window.rootViewController = vc;
-    [self.window makeKeyAndVisible ];
-    [[SingleLineTextField appearance] setLineDisabledColor:[UIColor cyanColor]];
-    [[SingleLineTextField appearance] setLineNormalColor:[UIColor grayColor]];
-    [[SingleLineTextField appearance] setLineSelectedColor:[UIColor blueColor]];
-    [[SingleLineTextField appearance] setInputPlaceHolderColor:[UIColor greenColor]];
+    [self.window makeKeyAndVisible];
+    
+    [[SingleLineTextField appearance] setLineDisabledColor:[UIColor colorWithRed:0.6588235294 green:0.6588235294 blue:0.6588235294 alpha:1]];
+    [[SingleLineTextField appearance] setLineSelectedColor:[UIColor colorWithRed:0.1960784314 green:0.6 blue:0.8 alpha:1]];
+    [[SingleLineTextField appearance] setInputPlaceHolderColor:[UIColor colorWithRed:0.65 green:0.65 blue:0.65 alpha:1]];
     [[SingleLineTextField appearance] setInputFont:[UIFont boldSystemFontOfSize:13]];
     [[SingleLineTextField appearance] setPlaceHolderFont:[UIFont boldSystemFontOfSize:13]];
-    
-    
-    
     return YES;
 }
 							

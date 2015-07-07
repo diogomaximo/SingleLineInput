@@ -62,6 +62,7 @@
     lineView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height + 2 , frame.size.width, 1)];
     lineView.backgroundColor = lineNormalColor;
     [self addSubview:lineView];
+    
 }
 
 -(void) createPlaceHolderInput{
@@ -83,7 +84,6 @@
             placeHolderLabel.font = placeHolderFontFloat;
             
         }
-        
     }];
     ;
 }
@@ -143,6 +143,15 @@
     placeHolderLabel.textColor = placeHolderColor;
 }
 
+-(void) updateText:(NSString *) aText{
+    if (aText.length > 0) {
+        placeHolderLabel.frame = CGRectMake(placeHolderLabel.frame.origin.x, placeHolderLabel.frame.origin.y-20, placeHolderLabel.frame.size.width, placeHolderLabel.frame.size.height);
+        placeHolderLabel.font = placeHolderFont;
+    }
+    
+    self.text = aText;
+}
+
 -(void) setInputFont:(UIFont *)font NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR{
     inputFont = font;
     self.font = inputFont;
@@ -158,5 +167,11 @@
     }
 }
 
+
+#pragma UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end

@@ -6,12 +6,6 @@
 // project.
 
 
-// FBSnapshotTestCase
-#define COCOAPODS_POD_AVAILABLE_FBSnapshotTestCase
-#define COCOAPODS_VERSION_MAJOR_FBSnapshotTestCase 1
-#define COCOAPODS_VERSION_MINOR_FBSnapshotTestCase 5
-#define COCOAPODS_VERSION_PATCH_FBSnapshotTestCase 0
-
 // SingleLineInput
 #define COCOAPODS_POD_AVAILABLE_SingleLineInput
 #define COCOAPODS_VERSION_MAJOR_SingleLineInput 0

@@ -8,7 +8,10 @@
 
 #import "SLViewController.h"
 #import "SingleLineTextField.h"
-@interface SLViewController ()
+
+
+@interface SLViewController (){
+}
 @property (weak, nonatomic) IBOutlet SingleLineTextField *cityInput;
 
 @end
@@ -17,7 +20,10 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    self.title = @"Account";
+    [_cityInput setInputTextColor:[UIColor blueColor]] ;
+    [_cityInput setLineSelectedColor:[UIColor greenColor]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,5 +31,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
