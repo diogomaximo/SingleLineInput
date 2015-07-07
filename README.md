@@ -16,12 +16,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 1- SingleLineInput is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 ```
-    pod "SingleLineInput"
+pod "SingleLineInput"
 ```
 
 2- Run 
 ```
-    pod update
+pod update
 ```
 
 3- Change your UITextField to SingleLineInput
@@ -53,7 +53,6 @@ Diogo Maximo, dcmaximo@gmail.com
 ## License
 
 SingleLineInput is available under the MIT license. See the LICENSE file for more info.
-
 
 
 
