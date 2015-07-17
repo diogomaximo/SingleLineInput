@@ -16,8 +16,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 it, simply add the following line to your Podfile:
 ```
 pod "SingleLineInput"
-``` 
-
+```
 2- Run 
 ```
 pod update
