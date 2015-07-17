@@ -9,6 +9,7 @@
 #define kSpaceToLine 2
 #define kSpaceToPlaceHolder 8
 
+
 @implementation SingleLineTextField{
     CGRect frame;
     UIView *lineView;
