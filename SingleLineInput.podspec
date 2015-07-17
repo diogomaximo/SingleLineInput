@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        It's an implementation of Telegram text field used on https://web.telegram.org
                        * Custom input with one line
-                       * Place holder animation like telegram input
+                       * Place holder animation like float label
                        DESC
   s.homepage         = "https://github.com/diogomaximo/SingleLineInput"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
