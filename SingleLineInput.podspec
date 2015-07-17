@@ -8,12 +8,12 @@
 #
 Pod::Spec.new do |s|
   s.name             = "SingleLineInput"
-  s.version          = "1.0.3"
-  s.summary          = "A single line textfield with the same style of telegram website."
+  s.version          = "1.0.5"
+  s.summary          = "A single line textfield with float label animation."
   s.description      = <<-DESC
                        It's an implementation of Telegram text field used on https://web.telegram.org
                        * Custom input with one line
-                       * Place holder animation like telegram input
+                       * Place holder animation with float label animation
                        DESC
   s.homepage         = "https://github.com/diogomaximo/SingleLineInput"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"

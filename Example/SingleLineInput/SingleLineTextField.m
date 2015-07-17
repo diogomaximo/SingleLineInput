@@ -27,7 +27,6 @@
     UIFont *inputFont;
     UIFont *placeHolderFont;
     UIFont *placeHolderFontFloat;
-    
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
