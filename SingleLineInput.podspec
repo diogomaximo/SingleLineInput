@@ -8,7 +8,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = "SingleLineInput"
-  s.version          = "1.0.6"
+  s.version          = "1.0.7"
   s.summary          = "A single line textfield with float label animation."
   s.description      = <<-DESC
                        It's an implementation of Telegram text field used on https://web.telegram.org
@@ -32,5 +32,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+   s.dependency 'IQKeyboardManager', :git => 'https://github.com/diogomaximo/IQKeyboard.git'
 end

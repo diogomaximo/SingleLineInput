@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sP4-nI-9ad">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sP4-nI-9ad">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -18,12 +20,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9J-sx-CRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1184" y="-1589"/>
+            <point key="canvasLocation" x="-1461" y="-1658"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="myForm" id="vXZ-lx-hvc" customClass="SLViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -33,8 +34,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTW-8x-Fuc" customClass="SingleLineTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTW-8x-Fuc" customClass="SingleLineTextField">
                                 <rect key="frame" x="15" y="126" width="290" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="PSm-rN-3no"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
@@ -48,27 +52,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit your basic account information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-Bf-tN3">
-                                <rect key="frame" x="15" y="79" width="289" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Edit your basic account information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-Bf-tN3">
+                                <rect key="frame" x="15" y="79" width="290" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="LQ2-MA-ISf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qTW-8x-Fuc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-5" id="2tK-mK-3KV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qTW-8x-Fuc" secondAttribute="trailing" constant="-5" id="IHt-oq-Txh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HWW-Bf-tN3" secondAttribute="trailing" constant="15" id="PTv-KR-QQC"/>
+                            <constraint firstItem="qTW-8x-Fuc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-5" id="RQV-8r-Cnu"/>
+                            <constraint firstItem="HWW-Bf-tN3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="hd7-M8-cRl"/>
+                            <constraint firstItem="qTW-8x-Fuc" firstAttribute="top" secondItem="HWW-Bf-tN3" secondAttribute="bottom" constant="15" id="ks1-66-DYQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qTW-8x-Fuc" secondAttribute="trailing" constant="-5" id="ruE-hC-Sfp"/>
+                            <constraint firstItem="HWW-Bf-tN3" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="wGC-Di-UiZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eYf-5N-aRQ"/>
                     <connections>
                         <outlet property="cityInput" destination="gBU-ti-Eky" id="l3A-MQ-SLV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-309" y="-1709"/>
+            <point key="canvasLocation" x="-718" y="-1565"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

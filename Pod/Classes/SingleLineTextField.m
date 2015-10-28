@@ -5,9 +5,9 @@
 //  Created by Diogo Maximo on 17/10/14.
 
 #import "SingleLineTextField.h"
-#define kAnimationOffSet 20
+#define kAnimationOffSet 23
 #define kSpaceToLine 2
-#define kSpaceToPlaceHolder 8
+#define kSpaceToPlaceHolder 22
 
 
 @implementation SingleLineTextField{
@@ -27,14 +27,15 @@
     UIFont *inputFont;
     UIFont *placeHolderFont;
     UIFont *placeHolderFontFloat;
+    BOOL createdPlaceHolder;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
     if (self) {
-        frame = self.bounds;
-        offSetSizeTextField = 10;
+        //frame = self.bounds;
+        offSetSizeTextField = 14;
         self.lineSelectedColor = [UIColor colorWithRed:0.33 green:0.49 blue:0.36 alpha:1];
         self.lineNormalColor   = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1];
         self.lineDisabledColor = [UIColor grayColor];
@@ -57,14 +58,18 @@
 - (void) layoutSubviews
 {
     [super layoutSubviews];
-    self.frame = aFrame;
+    lineView.frame = CGRectMake(0,  self.frame.size.height - 10  , self.frame.size.width, 1);
+    if (!createdPlaceHolder) {
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height + offSetSizeTextField);
+        placeHolderLabel.frame = CGRectMake(0, (self.frame.size.height/2) - kSpaceToPlaceHolder, self.frame.size.width, self.frame.size.height);
+        createdPlaceHolder = YES;
+    }
 }
 
 -(void) createLineInput{
     lineView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height + kSpaceToLine , frame.size.width, 1)];
     lineView.backgroundColor = lineNormalColor;
     [self addSubview:lineView];
-    
 }
 
 -(void) createPlaceHolderInput{
@@ -86,8 +91,8 @@
             placeHolderLabel.font = placeHolderFontFloat;
             
         }
+    }completion:^(BOOL finished) {
     }];
-    ;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
