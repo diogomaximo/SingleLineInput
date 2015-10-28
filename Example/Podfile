@@ -6,6 +6,4 @@ end
 
 target 'Tests', :exclusive => true do
   pod "SingleLineInput", :path => "../"
-
-  pod 'FBSnapshotTestCase'
 end
